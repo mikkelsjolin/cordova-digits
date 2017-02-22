@@ -1,0 +1,17 @@
+{
+  "name": "cordova-digits",
+  "version": "0.0.1",
+  "description": "Cordova plugin for Digits SDK",
+  "cordova": {
+    "id": "red.quanto.plugins.digits",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Quanto",
+  "license": "MIT"
+}
