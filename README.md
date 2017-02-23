@@ -1,6 +1,8 @@
 # cordova-digits
 Cordova plugin for Digits native mobile SDK ([https://get.digits.com](https://get.digits.com))
 
+*Letting Cordova chat with Digits*
+
 ## Characteristics
 Support login and logout for native Digits SDK, with options for customization:
 - accentColor
