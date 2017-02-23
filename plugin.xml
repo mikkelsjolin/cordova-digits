@@ -10,7 +10,7 @@
   <preference name="FABRIC_CONSUMER_SECRET" />
 
   <engines>
-    <engine name="cordova" version=">=3.0.0" />
+    <engine name="cordova" version=">=6.5.0" />
   </engines>
 
   <platform name="ios">

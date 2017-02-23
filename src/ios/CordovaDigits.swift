@@ -1,10 +1,9 @@
 //
-//  CordovaDigits.swift
+//  Authentication.swift
 //  Quanto Plugins
 //
 //  Created by Bradley Suira on 2/17/17.
 //
-
 
 import Fabric
 import DigitsKit
@@ -17,6 +16,7 @@ import DigitsKit
 
 	func finishLaunching() {
 			Fabric.with([Digits.self])
+			
 	}
 
   @objc(authenticate:)
@@ -30,6 +30,7 @@ import DigitsKit
 
     self.commandDelegate!.run(inBackground: {
       self.doAuthenticate(command, options)
+			
     })
   }
 
@@ -49,7 +50,7 @@ import DigitsKit
 			configuration = DGTAuthenticationConfiguration(accountFields: .defaultOptionMask)
       break
 		}
-
+		
     return configuration
 		 
   }
@@ -72,8 +73,7 @@ import DigitsKit
       configuration?.phoneNumber = options.object(forKey: "phoneNumber") as! String
       configuration?.title = options.object(forKey: "title") as! String
       configuration?.appearance = appearance
-
-      print("options.accentColor: \(options["phoneNumber"])")
+			
     }else {
 
       configuration = self.getAuthConfig("") 
@@ -84,30 +84,21 @@ import DigitsKit
 		digits.authenticate(with: nil, configuration: configuration!) { session, error in
 	    
         if (session != nil) {
+				//get the auth headers
 				let oauthSigning: DGTOAuthSigning = DGTOAuthSigning(authConfig: digits.authConfig, authSession: digits.session())
-				
 				let authHeaders = oauthSigning.oAuthEchoHeadersToVerifyCredentials()
 				
 				do {
 					
 					let data = try JSONSerialization.data(withJSONObject: authHeaders, options: JSONSerialization.WritingOptions.prettyPrinted)
+					let output = NSString.init(data: data, encoding: String.Encoding.utf8.rawValue)
 					
-					
-					let str = NSString.init(data: data, encoding: String.Encoding.utf8.rawValue)
-					
-					
-					print(str ?? "")
-
-          let message = "Phone number: \(session!.phoneNumber)"
-				print(message)
-
-        result = CDVPluginResult( status: CDVCommandStatus_OK, messageAs: message)
+        	result = CDVPluginResult( status: CDVCommandStatus_OK, messageAs: [output as Any])
 
 				} catch let loginError as NSError {
 					
 					print ("Error signing out: \(loginError.localizedDescription)")
 					    result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: loginError.localizedDescription)
-					
 				}
 
 			} else {
@@ -117,17 +108,18 @@ import DigitsKit
 			}
 
       self.commandDelegate!.send(result!, callbackId: command.callbackId)
-			
 		}
   }
 
-  @objc(logout:)
+  @objc(logOut:)
   func logOut(command: CDVInvokedUrlCommand) { 
 
     Digits.sharedInstance().logOut()
+		let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "OK")
+		self.commandDelegate!.send(result!, callbackId: command.callbackId)
   }
 
- func colorFrom(hex:String)-> UIColor {
+ private func colorFrom(hex:String)-> UIColor {
 		var rgbValue: CUnsignedInt = 0
 		
 		let scanner = Scanner(string: hex)
@@ -135,7 +127,6 @@ import DigitsKit
 		scanner.scanHexInt32(&rgbValue)
 		
 		return UIColor.init(red:UIColorMasks.redValue(rgbValue), green:UIColorMasks.greenValue(rgbValue), blue:UIColorMasks.blueValue(rgbValue), alpha: 1.0)
-		
 	}
 }
 
