@@ -1,0 +1,115 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/bradley/.nvm/versions/node/v7.4.0/bin/node',
+1 verbose cli   '/Users/bradley/.nvm/versions/node/v7.4.0/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   '.' ]
+2 info using npm@4.0.5
+3 info using node@v7.4.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/bradley/Code/cordova-digits',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/bradley/.npm/cordova-digits/0.0.1/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/bradley/.npm correctMkdir not in flight; initializing
+10 info lifecycle cordova-digits@0.0.1~prepublish: cordova-digits@0.0.1
+11 silly lifecycle cordova-digits@0.0.1~prepublish: no script for prepublish, continuing
+12 info lifecycle cordova-digits@0.0.1~prepare: cordova-digits@0.0.1
+13 silly lifecycle cordova-digits@0.0.1~prepare: no script for prepare, continuing
+14 verbose tar pack [ '/Users/bradley/.npm/cordova-digits/0.0.1/package.tgz',
+14 verbose tar pack   '/Users/bradley/Code/cordova-digits' ]
+15 verbose tarball /Users/bradley/.npm/cordova-digits/0.0.1/package.tgz
+16 verbose folder /Users/bradley/Code/cordova-digits
+17 verbose addLocalTarball adding from inside cache /Users/bradley/.npm/cordova-digits/0.0.1/package.tgz
+18 verbose correctMkdir /Users/bradley/.npm correctMkdir not in flight; initializing
+19 silly cache afterAdd cordova-digits@0.0.1
+20 verbose afterAdd /Users/bradley/.npm/cordova-digits/0.0.1/package/package.json not in flight; writing
+21 verbose correctMkdir /Users/bradley/.npm correctMkdir not in flight; initializing
+22 verbose afterAdd /Users/bradley/.npm/cordova-digits/0.0.1/package/package.json written
+23 silly publish { name: 'cordova-digits',
+23 silly publish   version: '0.0.1',
+23 silly publish   description: 'Cordova plugin for Digits SDK',
+23 silly publish   cordova: { id: 'red.quanto.plugins.digits', platforms: [ 'ios' ] },
+23 silly publish   keywords: [ 'ecosystem:cordova', 'cordova-ios' ],
+23 silly publish   author: { name: 'Quanto' },
+23 silly publish   license: 'MIT',
+23 silly publish   repository:
+23 silly publish    { type: 'git',
+23 silly publish      url: 'git+https://github.com/red-quanto/cordova-digits.git' },
+23 silly publish   engines: [ { name: 'cordova', version: '>=6.5.0' } ],
+23 silly publish   bugs: { url: 'https://github.com/red-quanto/cordova-digits/issues' },
+23 silly publish   homepage: 'https://github.com/red-quanto/cordova-digits#readme',
+23 silly publish   readme: '# cordova-digits\nCordova plugin for Digits native mobile SDK ([https://get.digits.com](https://get.digits.com))\n\n*Letting Cordova chat with Digits*\n\n## Characteristics\nSupport login and logout for native Digits SDK, with options for customization:\n- accentColor\n- backgroundColor\n- phoneNumer (pre-populate)\n- title: Custom title in the top navbar\n- accountFields: used if you want to get only the phone number or also email for example\n\n## Installation\n```\ncordova plugin add https://github.com/red-quanto/cordova-digits --save --variable FABRIC_API_KEY=your_api_key --variable FABRIC_API_SECRET=your_api_secret\n\n```\n## Suported Plaforms\n- iOS\n- Android (soon)\n\n## Usage\n\n### Authenticate\n\n`CordovaDigits.authenticate(options, successCallback(result), errorCallback(error))`\n\nExample:\n```\nvar options = {\n    accentColor: \'#0389D1\',\n    backgroundColor: \'#FFFFFF\',\n    phoneNumber: \'+507\', //pre populate with country prefix or phone number\n    title: \'YOUR TITLE\',\n    accountFields: \'defaultOptionMask\' //can be email, defaultOptionMask, none\n};\n\nCordovaDigits.authenticate(\n    options,\n    function (result) {\n\n        console.log(\'[Digits]\', \'login result\', result);\n        //your code\n\n    },\n    function (error) {\n        console.warn(\'[Digits]\', \'login error\', err);\n        //your code\n    }\n);\n```\n\nThe result in success Callback has the two headers for user verification:\n```\n{\n  "X-Verify-Credentials-Authorization" : "OAuth oauth_signature="OAUTH_SIGNATURE\\",oauth_nonce=\\"OAUTH_NONCE\\",oauth_timestamp=\\"1487784750\\",oauth_consumer_key=\\"CONSUMER_KEY\\",oauth_token=\\"OAUTH_TOKEN\\",oauth_version=\\"1.0\\",oauth_signature_method=\\"HMAC-SHA1\\"",\n  "X-Auth-Service-Provider" : "https:\\/\\/api.digits.com\\/1.1\\/sdk\\/account.json"\n}\n```\n\n### LogOut\n\n```\nCordovaDigits.logOut();\n```\n\n## Contributors\nThis plugin is based on ideas and code from other repos:\n- [https://github.com/JimmyMakesThings/cordova-plugin-digits](https://github.com/JimmyMakesThings/cordova-plugin-digits).\n- [https://github.com/cosmith/cordova-digits](https://github.com/cosmith/cordova-digits).\n\n\n',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: 'a500edb3f0c03e7cdcd67b03aad2bbcfd8856239',
+23 silly publish   _id: 'cordova-digits@0.0.1',
+23 silly publish   scripts: {},
+23 silly publish   _shasum: 'ad52911922f9aaea75c13037b9a23965a98d5722',
+23 silly publish   _from: '.' }
+24 info lifecycle cordova-digits@0.0.1~prepublishOnly: cordova-digits@0.0.1
+25 silly lifecycle cordova-digits@0.0.1~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name cordova-digits
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'cordova-digits',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'cordova-digits',
+30 silly mapToRegistry   name: 'cordova-digits',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/cordova-digits
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading /Users/bradley/.npm/cordova-digits/0.0.1/package.tgz
+34 verbose request uri https://registry.npmjs.org/cordova-digits
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 5:20:35 PM
+37 verbose request using bearer token for auth
+38 verbose request id 77895e180842fd7b
+39 http request PUT https://registry.npmjs.org/cordova-digits
+40 http 403 https://registry.npmjs.org/cordova-digits
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=300',
+41 verbose headers   'content-length': '128',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Thu, 23 Feb 2017 22:21:21 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-mia1327-MIA',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1487888435.879760,VS0,VE45766',
+41 verbose headers   vary: 'Accept-Encoding' }
+42 verbose request invalidating /Users/bradley/.npm/registry.npmjs.org/cordova-digits on PUT
+43 error publish Failed PUT 403
+44 verbose stack Error: "You cannot publish over the previously published version 0.0.1. Try bumping the version to 1.0.0" : cordova-digits
+44 verbose stack     at makeError (/Users/bradley/.nvm/versions/node/v7.4.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (/Users/bradley/.nvm/versions/node/v7.4.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+44 verbose stack     at Request._callback (/Users/bradley/.nvm/versions/node/v7.4.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+44 verbose stack     at Request.self.callback (/Users/bradley/.nvm/versions/node/v7.4.0/lib/node_modules/npm/node_modules/request/request.js:186:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:191:7)
+44 verbose stack     at Request.<anonymous> (/Users/bradley/.nvm/versions/node/v7.4.0/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:188:7)
+44 verbose stack     at IncomingMessage.<anonymous> (/Users/bradley/.nvm/versions/node/v7.4.0/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+45 verbose statusCode 403
+46 verbose pkgid cordova-digits
+47 verbose cwd /Users/bradley/Code/cordova-digits
+48 error Darwin 16.4.0
+49 error argv "/Users/bradley/.nvm/versions/node/v7.4.0/bin/node" "/Users/bradley/.nvm/versions/node/v7.4.0/bin/npm" "publish" "."
+50 error node v7.4.0
+51 error npm  v4.0.5
+52 error code E403
+53 error "You cannot publish over the previously published version 0.0.1. Try bumping the version to 1.0.0" : cordova-digits
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]
