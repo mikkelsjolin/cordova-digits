@@ -13,5 +13,19 @@
     "cordova-ios"
   ],
   "author": "Quanto",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-quanto/cordova-digits.git"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=6.5.0"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/red-quanto/cordova-digits/issues"
+  },
+  "homepage": "https://github.com/red-quanto/cordova-digits#readme"
 }
