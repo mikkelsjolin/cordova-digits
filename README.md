@@ -51,7 +51,7 @@ CordovaDigits.authenticate(
 );
 ```
 
-The result in success Callback has the two headers for user verification:
+The result in success callback has the two headers for user verification:
 ```
 {
   "X-Verify-Credentials-Authorization" : "OAuth oauth_signature="OAUTH_SIGNATURE\",oauth_nonce=\"OAUTH_NONCE\",oauth_timestamp=\"1487784750\",oauth_consumer_key=\"CONSUMER_KEY\",oauth_token=\"OAUTH_TOKEN\",oauth_version=\"1.0\",oauth_signature_method=\"HMAC-SHA1\"",
@@ -64,6 +64,41 @@ The result in success Callback has the two headers for user verification:
 ```
 CordovaDigits.logOut();
 ```
+
+
+### IsAuthenticated
+Get the current digits session if it exists
+
+`CordovaDigits.isAuthenticated(successCallback(result), errorCallback(error))`
+
+Example:
+```
+
+CordovaDigits.isAuthenticated(
+    function (result) {
+
+        console.log('[Digits]', 'user is authenticated', result);
+        //your code
+
+    },
+    function (error) {
+        console.warn('[Digits]', 'user not authenticated', err);
+        //your code
+    }
+);
+```
+
+The result in success callback is similar to the authenticate() method:
+
+### onSessionHasChanged
+Listener for session updated event, for example when the phone number has changed, [more info...](https://docs.fabric.io/apple/digits/advanced-setup.html#digitssessionhaschanged)
+
+**Not tested yet** 
+
+### onSessionExpired
+Listener for session expired event, [more info...](https://docs.fabric.io/apple/digits/advanced-setup.html#digitssessionexpiredforuserid)
+
+**Not tested yet**
 
 ## Contributors
 This plugin is based on ideas and code from other repos:
