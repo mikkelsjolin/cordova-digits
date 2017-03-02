@@ -13,7 +13,7 @@ Support login and logout for native Digits SDK, with options for customization:
 
 ## Installation
 ```
-cordova plugin add https://github.com/red-quanto/cordova-digits --save --variable FABRIC_API_KEY=your_api_key --variable FABRIC_API_SECRET=your_api_secret
+cordova plugin add cordova-digits --save --variable FABRIC_API_KEY=your_api_key --variable FABRIC_API_SECRET=your_api_secret
 
 ```
 ## Suported Plaforms
