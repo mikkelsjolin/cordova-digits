@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Cordova plugin for Digits SDK",
   "cordova": {
-    "id": "red.quanto.plugins.digits",
+    "id": "cordova-digits",
     "platforms": [
       "ios"
     ]
