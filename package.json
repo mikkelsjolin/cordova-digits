@@ -1,16 +1,20 @@
 {
   "name": "cordova-digits",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Cordova plugin for Digits SDK",
   "cordova": {
     "id": "cordova-digits",
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "keywords": [
     "ecosystem:cordova",
-    "cordova-ios"
+    "cordova-ios",
+    "cordova-android",
+    "cordova-digits",
+    "digits"
   ],
   "author": "Quanto",
   "license": "MIT",
