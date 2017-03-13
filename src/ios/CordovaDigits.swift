@@ -1,5 +1,5 @@
 //
-//  Authentication.swift
+//  CordovaDigits.swift
 //  Quanto Plugins
 //
 //  Created by Bradley Suira on 2/17/17.

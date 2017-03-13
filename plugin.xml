@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-digits" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Cordova Digits</name>
+     <description>Cordova plugin for native sdk of Digits.com</description>
+    <license>MIT</license>
+    <keywords>cordova,digits.com,digits</keywords>
+    <repo>https://github.com/red-quanto/cordova-digits</repo>
     <js-module name="CordovaDigits" src="www/CordovaDigits.js">
     <clobbers target="CordovaDigits" />
   </js-module>
@@ -13,6 +17,7 @@
     <engine name="cordova" version=">=6.5.0" />
   </engines>
 
+  <!-- ios -->
   <platform name="ios">
     <config-file parent="/*" target="config.xml">
       <feature name="CordovaDigits">
@@ -68,6 +73,41 @@
     <source-file src="src/ios/CordovaDigits.swift" />
     <dependency id="cordova-plugin-add-swift-support" url="https://github.com/akofman/cordova-plugin-add-swift-support"/>
   </platform>
+
+  <!-- android -->
+    <platform name="android">
+        <preference name="FABRIC_API_KEY" />
+        <preference name="FABRIC_API_SECRET" />
+
+        <framework src="src/android/digits.gradle" custom="true" type="gradleReference" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CordovaDigits" >
+                <param name="android-package" value="red.quanto.plugins.digits.CordovaDigits" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <preference name="android-minSdkVersion" value="10" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="$FABRIC_API_KEY" />
+            <meta-data
+                android:name="io.fabric.ApiSecret"
+                android:value="$FABRIC_API_SECRET" />
+        </config-file>
+
+        <source-file src="src/android/themes.xml" target-dir="res/values" />
+        <source-file src="src/android/CordovaDigits.java" target-dir="src/red/quanto/plugins/digits" />
+
+    </platform>
+    <!-- /android -->
 </plugin>
 
 
