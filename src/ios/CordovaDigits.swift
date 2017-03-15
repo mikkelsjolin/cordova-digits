@@ -190,7 +190,6 @@ import DigitsKit
 			
 			let data = try JSONSerialization.data(withJSONObject: authHeaders, options: JSONSerialization.WritingOptions.prettyPrinted)
 			let str = NSString.init(data: data, encoding: String.Encoding.utf8.rawValue)
-			print("getSessionHeaders return \(str)")
 			completion(str as Any, nil)
 			
 		} catch let error as NSError {
