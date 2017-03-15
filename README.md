@@ -5,10 +5,10 @@ Cordova plugin for Digits native mobile SDK ([https://get.digits.com](https://ge
 
 ## Characteristics
 Support login and logout for native Digits SDK, with options for customization:
-- accentColor
-- backgroundColor
+- accentColor (only for iOs, in android you need to update manually a theme file)
+- backgroundColor (only for iOs, in android you need to update manually a theme file)
 - phoneNumer (pre-populate)
-- title: Custom title in the top navbar
+- title: Custom title in the top navbar (only for iOs)
 - accountFields: used if you want to get only the phone number or also email for example
 
 ## Installation
@@ -105,4 +105,4 @@ This plugin is based on ideas and code from other repos:
 - [https://github.com/JimmyMakesThings/cordova-plugin-digits](https://github.com/JimmyMakesThings/cordova-plugin-digits).
 - [https://github.com/cosmith/cordova-digits](https://github.com/cosmith/cordova-digits).
 
-
+ 
