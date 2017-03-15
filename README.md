@@ -18,7 +18,7 @@ cordova plugin add cordova-digits --save --variable FABRIC_API_KEY=your_api_key 
 ```
 ## Suported Plaforms
 - iOS
-- Android (soon)
+- Android
 
 ## Usage
 
@@ -29,10 +29,10 @@ cordova plugin add cordova-digits --save --variable FABRIC_API_KEY=your_api_key 
 Example:
 ```
 var options = {
-    accentColor: '#0389D1',
-    backgroundColor: '#FFFFFF',
+    accentColor: '#0389D1', //only for iOs
+    backgroundColor: '#FFFFFF', //only for iOs
     phoneNumber: '+507', //pre populate with country prefix or phone number
-    title: 'YOUR TITLE',
+    title: 'YOUR TITLE', //only for iOs
     accountFields: 'defaultOptionMask' //can be email, defaultOptionMask, none
 };
 
