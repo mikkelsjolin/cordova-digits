@@ -5,8 +5,8 @@
     <license>MIT</license>
     <keywords>cordova,digits.com,digits</keywords>
     <repo>https://github.com/red-quanto/cordova-digits</repo>
-    <js-module name="CordovaDigits" src="www/CordovaDigits.js">
-      <clobbers target="CordovaDigits" />
+    <js-module name="digits" src="www/CordovaDigits.js">
+      <clobbers target="window.plugins.digits" />
     </js-module>
   
   <preference name="FABRIC_CONSUMER_KEY" />
